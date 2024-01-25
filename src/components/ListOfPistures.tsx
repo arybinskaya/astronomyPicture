@@ -27,27 +27,31 @@ const ListOfPistures: React.FC = () => {
     () => fetchImages(startDate, endDate)
   );
 
-  if (isLoading) return <p>Loading...</p>;
-  if (isError) return <p>Error fetching data</p>;
+  if (isLoading) return <h3>Loading...</h3>;
+  if (isError) return <h3>Error fetching data</h3>;
 
   return (
     <div>
-      <h1>Select the date of the astronomical picture</h1>
-      <div>
-        <label>Start Date: </label>
-        <input
-          type="date"
-          value={startDate}
-          onChange={(e) => setStartDate(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>End Date: </label>
-        <input
-          type="date"
-          value={endDate}
-          onChange={(e) => setEndDate(e.target.value)}
-        />
+      <h1 className="d-flex justify-content-center align-items-center">
+        Select the date of the astronomical picture
+      </h1>
+      <div className="d-flex justify-content-center align-items-center">
+        <div>
+          <label>Start Date: </label>
+          <input
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>End Date: </label>
+          <input
+            type="date"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+          />
+        </div>
       </div>
       <ul>
         {data?.map((image) => (
