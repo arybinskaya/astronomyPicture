@@ -18,8 +18,8 @@ const TodayNASA = () => {
         <h1 className="d-flex justify-content-center align-items-center">
           Astronomy Picture of the Day
         </h1>
-        <p>{data.explanation}</p>
-        <div className="d-flex justify-content-center align-items-center">
+        <p className="mt-5">{data.explanation}</p>
+        <div className="mt-5 d-flex justify-content-center align-items-center">
           <img src={data.url} alt="planet"></img>
         </div>
       </div>

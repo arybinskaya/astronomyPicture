@@ -32,20 +32,20 @@ const ListOfPistures: React.FC = () => {
 
   return (
     <div>
-      <h1 className="d-flex justify-content-center align-items-center">
+      <h1 className="d-flex justify-content-center align-items-center mt-5">
         Select the date of the astronomical picture
       </h1>
-      <div className="d-flex justify-content-center align-items-center">
-        <div>
-          <label>Start Date: </label>
+      <div className=" d-flex justify-content-center align-items-center">
+        <div className="mx-3">
+          <label className="mx-2">Start Date: </label>
           <input
             type="date"
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
           />
         </div>
-        <div>
-          <label>End Date: </label>
+        <div className="mx-3">
+          <label className="mx-2">End Date: </label>
           <input
             type="date"
             value={endDate}
@@ -53,14 +53,16 @@ const ListOfPistures: React.FC = () => {
           />
         </div>
       </div>
-      <ul>
-        {data?.map((image) => (
-          <li key={image.date}>
-            <img src={image.url} alt={image.title} />
-            <p>{image.title}</p>
-          </li>
-        ))}
-      </ul>
+      <div className="d-flex justify-content-center align-items-center">
+        <ul className="list-unstyled mt-5">
+          {data?.map((image) => (
+            <li className="mb-5" key={image.date}>
+              <img className="w-75" src={image.url} alt={image.title} />
+              <h2>{image.title}</h2>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
